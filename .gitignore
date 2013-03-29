@@ -9,3 +9,8 @@ log/*
 test/dummy/db/*.sqlite3
 test/dummy/log/*.log
 test/dummy/tmp/
+
+/.DS_Store
+/lib/.DS_Store
+/lib/vanity/.DS_Store
+/lib/vanity/templates/.DS_Store
