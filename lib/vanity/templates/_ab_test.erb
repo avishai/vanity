@@ -32,14 +32,14 @@
           <% if experiment.showing?(alt) %>
             showing
           <% else %>
-            <a class="button chooses" title="Show me this alternative from now on" href="#"
+            <a class="btn chooses" title="Show me this alternative from now on" href="#"
               data-id="<%= experiment.id %>" data-url="<%= url_for(:action=>:chooses, :e=>experiment.id, :a=>alt.id) %>">show</a>
           <% end %>
         <% end %>
       </td>
       <td class="action">
         <% if experiment.playground.collecting? && experiment.active? && respond_to?(:url_for) %>
-          <button class="finish" title="Set this alternative as the outcome and complete the experiment" href="#" 
+          <button class="btn btn-success finish" title="Set this alternative as the outcome and complete the experiment" href="#" 
             data-id="<%= experiment.id %>" alt-name="<%= alt.name %>" 
             data-url="<%= url_for(:action=>:finish, :e=>experiment.id, :a=>alt.id) %>">complete</button>
         <% end %>

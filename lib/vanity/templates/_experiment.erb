@@ -9,9 +9,10 @@
   <% if experiment.type == 'ab_test' && experiment.active? && experiment.playground.collecting? %>
     <span class='enabled-links'>
       <% action = experiment.enabled? ? 'Disable' : 'Enable' %>
+      <% action_class_name = experiment.enabled? ? 'btn-danger' : 'btn-success' %>
       
       <% if experiment.enabled? %> Enabled | <% end %>
-      <a title='<%=action%> this experiment.' href='#'
+      <a class='btn <%= action_class_name %>' title='<%=action%> this experiment.' href='#'
          data-id='<%= experiment.id %>' data-url='<%= url_for(:action=>action.downcase.to_sym, :e => experiment.id) %>'>
         <%= action %></a>
       <% if !experiment.enabled? %> | Disabled <% end %>
@@ -27,7 +28,7 @@
 <p class="meta">Started <%= experiment.created_at.strftime("%a, %b %d") %>
   <%= " | Completed #{experiment.completed_at.strftime("%a, %b %d")}" unless experiment.active? %>
   <% if experiment.playground.collecting? && respond_to?(:url_for) %>
-    <button class="reset" title="Restart this experiment from scratch" href="#"
+    <button class="btn reset" title="Restart this experiment from scratch" href="#"
       data-id="<%= experiment.id %>" data-url="<%= url_for(:action=>:reset, :e=>experiment.id) %>">Reset Experiment</button>
   <% end %>
 </p></div>
