@@ -15,7 +15,7 @@
       <a class='btn <%= action_class_name %>' title='<%=action%> this experiment.' href='#'
          data-id='<%= experiment.id %>' data-url='<%= url_for(:action=>action.downcase.to_sym, :e => experiment.id) %>'>
         <%= action %></a>
-      <% if !experiment.enabled? %> | Disabled <% end %>
+      <% if !experiment.enabled? %> &middot; Disabled <% end %>
       
     </span>
   <% end %>

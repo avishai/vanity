@@ -1,5 +1,5 @@
 <% score = experiment.score %>
-<table>
+<table class="table table-striped">
   <caption>
     <%= experiment.conclusion(score).join(" ") %>
     <% if experiment.active? && !experiment.enabled? %>
@@ -39,7 +39,7 @@
       </td>
       <td class="action">
         <% if experiment.playground.collecting? && experiment.active? && respond_to?(:url_for) %>
-          <button class="btn btn-success finish" title="Set this alternative as the outcome and complete the experiment" href="#" 
+          <button class="btn finish" title="Set this alternative as the outcome and complete the experiment" href="#" 
             data-id="<%= experiment.id %>" alt-name="<%= alt.name %>" 
             data-url="<%= url_for(:action=>:finish, :e=>experiment.id, :a=>alt.id) %>">complete</button>
         <% end %>
