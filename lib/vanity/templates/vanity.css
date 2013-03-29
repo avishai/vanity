@@ -8,9 +8,9 @@
 .vanity .experiment { margin: 1em 0 2em 0; border-bottom: 1px solid #ddd }
 .vanity .experiment .type { margin-left: .3em; color: #bbb; font-size: .8em; font-weight: normal }
 .vanity .experiment .inner {padding: 1em}
-.vanity .experiment .status_completed { background: #EEF }
-.vanity .experiment .status_enabled { background: #EFE }
-.vanity .experiment .status_disabled { background: #FEE }
+.vanity .experiment .status_completed { background: rgba(238, 238, 255, 0.4); }
+.vanity .experiment .status_enabled { background: rgba(238, 238, 255, 0.4); }
+.vanity .experiment .status_disabled { background: rgba(255, 238, 238, 0.4); }
 .vanity .experiment .enabled-links { float: right; font-weight: normal }
 .vanity .experiment .metric_count { font-size: 90% }
 
